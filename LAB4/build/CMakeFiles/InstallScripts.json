@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/aleksandrkalachev/lab4/build/cmake_install.cmake",
+		"/Users/aleksandrkalachev/lab4/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

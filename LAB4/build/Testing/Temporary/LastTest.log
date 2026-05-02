@@ -1,0 +1,33 @@
+Start testing: Apr 24 16:08 MSK
+----------------------------------------------------------
+1/2 Testing: ListTest
+1/2 Test: ListTest
+Command: "/Users/aleksandrkalachev/lab4/build/tests/test_list"
+Directory: /Users/aleksandrkalachev/lab4/build/tests
+"ListTest" start time: Apr 24 16:08 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ListTest" end time: Apr 24 16:08 MSK
+"ListTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: SortTest
+2/2 Test: SortTest
+Command: "/Users/aleksandrkalachev/lab4/build/tests/test_sort"
+Directory: /Users/aleksandrkalachev/lab4/build/tests
+"SortTest" start time: Apr 24 16:08 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SortTest" end time: Apr 24 16:08 MSK
+"SortTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 24 16:08 MSK

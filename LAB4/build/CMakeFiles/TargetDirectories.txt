@@ -1,0 +1,11 @@
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/my_lib.dir
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/lab4_exec.dir
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/run.dir
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/test.dir
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/edit_cache.dir
+/Users/aleksandrkalachev/lab4/build/CMakeFiles/rebuild_cache.dir
+/Users/aleksandrkalachev/lab4/build/tests/CMakeFiles/test_list.dir
+/Users/aleksandrkalachev/lab4/build/tests/CMakeFiles/test_sort.dir
+/Users/aleksandrkalachev/lab4/build/tests/CMakeFiles/test.dir
+/Users/aleksandrkalachev/lab4/build/tests/CMakeFiles/edit_cache.dir
+/Users/aleksandrkalachev/lab4/build/tests/CMakeFiles/rebuild_cache.dir

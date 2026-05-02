@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/lab4_exec.dir/src/lab4.cpp.o -o lab4_exec  libmy_lib.a
