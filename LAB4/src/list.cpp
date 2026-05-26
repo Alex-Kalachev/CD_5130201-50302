@@ -6,12 +6,10 @@ std::ostream& operator<<(std::ostream& out, const List& other){
     size_t i = 1;
 
     while (element != &other.Tail) {
-        out << "Элемент списка " << i << ": радиус "
-            << element->m_Data.get_radius()
+        out << "Элемент списка " << i << ": радиус " << element->m_Data.get_radius()
             << ", координаты центра "
             << element->m_Data.get_center().get_x() << " "
-            << element->m_Data.get_center().get_y()
-            << "\n";
+            << element->m_Data.get_center().get_y() << "\n";
 
         element = element->pNext;
         i++;

@@ -1,6 +1,7 @@
 #pragma once
 #include "node.hpp"
 #include <iostream>
+#include <fstream>
 
 class List{
 
@@ -17,6 +18,46 @@ class List{
             Tail.pPrev = &Head;
             Head.pPrev = nullptr;
             Tail.pNext = nullptr;
+        }
+
+        ~List(){
+            this->clear();
+        }
+
+        List(const List& other){
+            
+            this->Head.pNext = &this->Tail;
+            this->Tail.pPrev = &this->Head;
+            this->Head.pPrev = nullptr;
+            this->Tail.pNext = nullptr;
+
+            m_size = 0;
+
+            Node* element  = other.Head.pNext;
+
+            for (; (element != &other.Tail);) {
+                this->add_end(element->m_Data);
+                element = element->pNext;
+            }
+            
+        }
+
+        List& operator=(const List& other){
+            if (this == &other){
+                return *this;
+            }
+            
+            this->clear();
+            
+            Node* element  = other.Head.pNext;
+
+            for (; (element != &other.Tail);) {
+                this->add_end(element->m_Data);
+                element = element->pNext;
+            }
+
+            return *this;
+
         }
 
         void add_first(const Circle& circle){
@@ -85,16 +126,47 @@ class List{
             return m_size;
         }
 
-        Node* find(const Circle& circle){
+        class Iterator {
+            private:
+                Node* ptr; 
+
+            public:
+
+                Iterator(Node* p) :ptr(p){}
+
+                Circle& operator*() { 
+                    return ptr->m_Data; 
+                }
+
+                Iterator& operator++() { 
+                    ptr = ptr->pNext;
+                    return *this;
+                }
+
+                bool operator!=(const Iterator& other) const { return ptr != other.ptr; }
+                bool operator==(const Iterator& other) const { return ptr == other.ptr; }
+            };
+
+        Iterator begin()
+        {
+            return Iterator(this->Head.pNext);
+        }
+
+        Iterator end()
+        {
+            return Iterator(&this->Tail);
+        }
+
+        Iterator find(const Circle& circle){
             Node* element  = this->Head.pNext;
             for (; (element != &Tail);) {
                 if (element->m_Data == circle){
-                    return element;
+                    return Iterator(element);
                 }
                 element = element->pNext;
             }
 
-            return nullptr;
+            return this->end();
         }
 
         void upsort(){
@@ -119,6 +191,49 @@ class List{
                     break;
                 }
             }
+        }
+
+        
+        bool write_to_file(const char* filename) const {
+
+            std::ofstream fout(filename);
+            
+            if (!fout.is_open()) {
+                return false;
+            }
+
+            Node* element = this->Head.pNext;
+            
+            while (element != &Tail) {
+
+                fout << element->m_Data.get_center().get_x() << " "
+                    << element->m_Data.get_center().get_y() << " "
+                    << element->m_Data.get_radius() << "\n";
+                
+                element = element->pNext;
+            }
+
+            fout.close();
+            return true; 
+        }
+
+
+        bool read_from_file(const char* filename) {
+            std::ifstream fin(filename);
+            
+            if (!fin.is_open()) {
+                return false;
+            }
+
+            this->clear();
+
+            double x, y, r;
+            while (fin >> x >> y >> r){
+                this->add_end(Circle(x, y, r));
+            }
+
+            fin.close();
+            return true;
         }
 
         friend std::ostream& operator << (std::ostream& out, const List& other);
