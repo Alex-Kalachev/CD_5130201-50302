@@ -1,0 +1,2 @@
+This text is written in a file to test how to work with maikfile
+This text is written in a file to test how to work with maikfile too. (for cat)
